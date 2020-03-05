@@ -28,7 +28,7 @@
  
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input id="password" type="password" class="form-control" name="password" required placeholder="Enter at least 6 Character">
+                    <input id="password" type="password" class="form-control" name="password" required placeholder="Enter at least 8 Characters">
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
