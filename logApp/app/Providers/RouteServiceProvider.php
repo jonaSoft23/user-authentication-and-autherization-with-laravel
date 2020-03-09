@@ -31,7 +31,7 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-
+        Route::group(['domain' => '{domain}'], function() {});
         parent::boot();
     }
 

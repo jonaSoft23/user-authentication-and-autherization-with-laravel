@@ -15,16 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
+/* Route::get('/hello', function () {
     return "Hello";
-});
+}); */
 
 Route::get('/get','GetController@index');
 Route::post('/get','GetController@add');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home'); 
 
 Route::get('password/change', 'Auth\AuthController@changePassword');
 Route::post('password/change', 'Auth\AuthController@postChangePassword');
