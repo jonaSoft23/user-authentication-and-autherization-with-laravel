@@ -5,7 +5,7 @@
 <div class="container">
     <div class="jumbotron"> 
     <div>
-        <form class="form" action="/get" method="post">
+        <form class="form" action="/app/get" method="post">
             <input type="text" name="name">
             @csrf
             <button class="btn btn-success" type="submit">submit</button>

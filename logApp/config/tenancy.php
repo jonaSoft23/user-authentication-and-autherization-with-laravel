@@ -15,6 +15,7 @@ return [
             'table_names' => [
                 'tenants' => 'tenants',
                 'domains' => 'domains',
+                //'users'   => 'users'
             ],
         ],
         'redis' => [
@@ -25,13 +26,11 @@ return [
     'tenant_route_namespace' => 'App\Http\Controllers',
     'exempt_domains' => [ // e.g. domains which host landing pages, sign up pages, etc
          'localhost', 
-         'logapp.localhost',
-         '127.0.0.1',
-        
+         '127.0.0.1',     
     ],
     'database' => [
         'based_on' => null, // The connection that will be used as a base for the dynamically created tenant connection. Set to null to use the default connection.
-        'prefix' => 'tenant',
+        'prefix' => 'tenant_',
         'suffix' => '',
     ],
     'redis' => [
@@ -49,13 +48,13 @@ return [
         // Disks which should be suffixed with the suffix_base + tenant id.
         'disks' => [
             'local',
-            'public',
+            'public',   
             // 's3',
         ],
         'root_override' => [
             // Disks whose roots should be overriden after storage_path() is suffixed.
             'local' => '%storage_path%/app/',
-            'public' => '%storage_path%/app/public/',
+           // 'public' => '%storage_path%/app/public/',
         ],
     ],
     'database_managers' => [
@@ -76,7 +75,7 @@ return [
         // Their responsibility is making Laravel features tenant-aware.
         'database' => Stancl\Tenancy\TenancyBootstrappers\DatabaseTenancyBootstrapper::class,
         'cache' => Stancl\Tenancy\TenancyBootstrappers\CacheTenancyBootstrapper::class,
-        'filesystem' => Stancl\Tenancy\TenancyBootstrappers\FilesystemTenancyBootstrapper::class,
+        //'filesystem' => Stancl\Tenancy\TenancyBootstrappers\FilesystemTenancyBootstrapper::class,
         'queue' => Stancl\Tenancy\TenancyBootstrappers\QueueTenancyBootstrapper::class,
         // 'redis' => Stancl\Tenancy\TenancyBootstrappers\RedisTenancyBootstrapper::class, // Note: phpredis is needed
     ],
@@ -95,7 +94,7 @@ return [
     ],
     'home_url' => '/app',
     'queue_database_creation' => false,
-    'migrate_after_creation' => false, // run migrations after creating a tenant
+    'migrate_after_creation' => true, // run migrations after creating a tenant
     'migration_parameters' => [
         // '--force' => true, // force database migrations
     ],

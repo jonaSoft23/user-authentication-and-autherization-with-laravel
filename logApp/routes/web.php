@@ -11,20 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+ Route::get('/', function () {
+     return view('welcome');
+ });
 
 /* Route::get('/hello', function () {
     return "Hello";
 }); */
 
-Route::get('/get','GetController@index');
-Route::post('/get','GetController@add');
+/* Route::get('/welcome', function () {
+    return view('welcome');
+});
+ */
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home'); 
+
 
 Route::get('password/change', 'Auth\AuthController@changePassword');
 Route::post('password/change', 'Auth\AuthController@postChangePassword');
@@ -35,3 +38,9 @@ Route::post('/add/user', 'AddUserController@add');
 Route::get('user/{id}', function ($id) {
     return 'User '.$id;
 });
+
+Route::get('/dash', function () {
+    return view('starter');
+});
+
+Route::get('/home', 'HomeController@index')->name('home');
