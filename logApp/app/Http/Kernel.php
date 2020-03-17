@@ -76,8 +76,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middlewarePriority = [
-        \Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains::class,
-        \Stancl\Tenancy\Middleware\InitializeTenancy::class,
+
         \Stancl\Tenancy\Middleware\PreventAccessFromTenantDomains::class,
         \Stancl\Tenancy\Middleware\InitializeTenancy::class,
         \Illuminate\Session\Middleware\StartSession::class,

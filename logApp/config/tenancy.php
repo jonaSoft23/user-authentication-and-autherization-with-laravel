@@ -26,7 +26,8 @@ return [
     'tenant_route_namespace' => 'App\Http\Controllers',
     'exempt_domains' => [ // e.g. domains which host landing pages, sign up pages, etc
          'localhost', 
-         '127.0.0.1',     
+         '127.0.0.1', 
+         'mycrm.com'    
     ],
     'database' => [
         'based_on' => null, // The connection that will be used as a base for the dynamically created tenant connection. Set to null to use the default connection.
@@ -92,7 +93,7 @@ return [
     'storage_to_config_map' => [ // Used by the TenantConfig feature
         // 'paypal_api_key' => 'services.paypal.api_key',
     ],
-    'home_url' => '/app',
+    'home_url' => '/app/login',
     'queue_database_creation' => false,
     'migrate_after_creation' => true, // run migrations after creating a tenant
     'migration_parameters' => [

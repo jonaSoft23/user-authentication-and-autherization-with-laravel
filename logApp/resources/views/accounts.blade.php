@@ -33,7 +33,7 @@
                 <div class="card-header">
                   <h3 class="card-title">DataTable with default features</h3>
                   <div class="container text-right">
-                  <button class="btn btn-primary btn-sm d-inline" aria-pressed="true"  data-target="#demo" aria-controls="demo" aria-expanded="false">Add new Account</button>
+                  <button class="btn btn-primary btn-sm d-inline" aria-pressed="true" data-toggle="collapse" data-target="#demo" aria-controls="demo" aria-expanded="false">Add new Account</button>
                   </div>
                 </div>
                 <!-- /.card-header -->
@@ -71,7 +71,7 @@
                 </div>
                 <!-- /.card-body -->
               </div>
-              <div  id="demo">
+              <div  class="collapse" id="demo">
               <div class="card " >
                 <div class="card-header">
                     <h3 class="card-title">Add a new Account</h3>

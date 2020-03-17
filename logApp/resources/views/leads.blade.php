@@ -1,8 +1,5 @@
 @extends('layouts.dashboard')
 
-@section('user')
-<a href="#" class="d-block">User Man</a> 
-@endsection
 
 @section('content')
 
@@ -33,7 +30,7 @@
                 <div class="card-header">
                   <h3 class="card-title">DataTable with default features</h3>
                   <div class="container text-right">
-                  <button class="btn btn-primary btn-sm d-inline"  data-target="#demo" aria-controls="demo" aria-expanded="false">Add lead</button>
+                  <button class="btn btn-primary btn-sm d-inline" data-toggle="collapse" data-target="#demo" aria-controls="demo" aria-expanded="false">Add lead</button>
                   </div>
                 </div>
                 <!-- /.card-header -->
@@ -74,7 +71,7 @@
                 </div>
                 <!-- /.card-body -->
               </div>
-              <div  id="demo">
+              <div class="collapse"  id="demo">
               <div class="card " >
                 <div class="card-header">
                     <h3 class="card-title">Add a new possible lead</h3>

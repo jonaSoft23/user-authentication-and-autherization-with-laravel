@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -31,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/first";
+  //  protected $redirectTo = "/login";
 
     /**
      * Create a new controller instance.
@@ -81,14 +82,15 @@ class RegisterController extends Controller
 
         $domain = $request->input('domain');
         // TODO: consider appending a tld suffix so the redirect makes sense
-        $domain .= ".localhost";
+        $domain .= ".mycrm.com";
         $user = (new \App\Services\TenantSetup)->createAndReturnUser($domain, $validated);
 
         /* event(new Registered($user)); */
-
+        
         return /* $this->registered($request, $user)
-            ?:  */redirect( $domain .'/app'.$this->redirectTo);
-            /*TODO append 'https:// */
-            
+            ?:  redirect( $domain .'/app');
+            /*TODO append 'https://......$this->redirectTo */
+           /*  redirect()->to($domain); */
+           new RedirectResponse($domain);
     }
 }
